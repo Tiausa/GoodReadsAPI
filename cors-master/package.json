@@ -1,0 +1,41 @@
+{
+  "name": "cors",
+  "description": "Node.js CORS middleware",
+  "version": "2.8.4",
+  "author": "Troy Goode <troygoode@gmail.com> (https://github.com/troygoode/)",
+  "license": "MIT",
+  "keywords": [
+    "cors",
+    "express",
+    "connect",
+    "middleware"
+  ],
+  "repository": "expressjs/cors",
+  "main": "./lib/index.js",
+  "dependencies": {
+    "object-assign": "^4",
+    "vary": "^1"
+  },
+  "devDependencies": {
+    "after": "0.8.2",
+    "eslint": "2.13.1",
+    "express": "4.16.2",
+    "mocha": "3.5.3",
+    "nyc": "10.3.2",
+    "supertest": "1.2.0"
+  },
+  "files": [
+    "lib/index.js",
+    "CONTRIBUTING.md",
+    "HISTORY.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "scripts": {
+    "test": "npm run lint && nyc --reporter=html --reporter=text mocha",
+    "lint": "eslint lib test"
+  }
+}

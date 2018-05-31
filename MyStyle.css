@@ -1,0 +1,44 @@
+body {
+    background-color: lightblue;
+    margin-left: 20px;
+}
+
+h1 {
+    color: navy;
+     align-content: center;
+}
+
+.outercolumn{
+    align-content: center;
+    color: darkred;
+    white-space: nowrap;
+}
+
+.Labels{
+    font-style: oblique;
+    white-space: nowrap;
+}
+.textfields{
+    border:1px solid red;
+    display: inline;
+    white-space: nowrap;
+
+}
+
+.OuterButton{
+    align-content: center;
+}
+.InnerButton{
+    border-radius: 25px;
+    border: 1px solid maroon;
+}
+
+.divOutside {
+    border-bottom:1px maroon solid;
+    width:200px;
+    padding-bottom:5px;
+    padding-top:5px;
+    alignment: center;
+    position: relative;
+    margin:0 auto;
+}

@@ -1,0 +1,748 @@
+<!DOCTYPE HTML>
+<!--
+
+	The styling of this website uses the template provided by:
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+
+	This website can be found at http://people.oregonstate.edu/~seiboldt/index.html
+
+-->
+<html>
+	<head>
+		<title>Learning GoodReads API</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body class="landing">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Intro</a></li>
+							<li><a href="#API1A">API</a></li>
+							<li><a href="#APIKeys">API Keys</a></li>
+							<li><a href="#APIMethods">Methods</a></li>
+							<li><a href="#XMLToJSON">XML to JSON</a></li>
+							<li><a href="#GetAndPost">Get and Post</a></li>
+							<li><a href="#HTMLCSS">HTML and CSS</a></li>
+							<li><a href="#CommunicatingWithServer">Communicating With Servers</a>
+								<ul>
+									<li><a href="#Listener">Listener</a></li>
+									<li><a href="#Variables">Variables</a></li>
+									<li><a href="#Request">Request</a></li>
+									<li><a href="#Response">Response</a></li>
+									<li><a href="#Visibility">Visibility</a></li>
+									<li><a href="#FinalProduct">Final Product</a></li>
+
+								</ul>
+							</li>
+							<li><a href="#LinkingContent">Linking Content</a></li>
+							<li><a href="#YourTurn">Your Turn</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Banner -->
+				<section id="banner">
+					<div class="content">
+						<header>
+							<h2>Learning GoodReads API</h2>
+							<p>By Tia Seibold</p>
+							<p>In this guide, you will learn how to use GoodReads APIs<br>
+								to transfer information to and from your own website. <br><br>
+								In order to find this guide useful, you should be able<br> to work with
+								CSS, HTML, Javascript and DOM.<br> Please note that this is an entry level guide, <br>
+								so advanced developers might find this manual mundane.<br>
+								I hope it reads well!
+								</p>
+						</header>
+						<span class="img-circle" ><img style ="max-height: 300px;
+							  max-width: 300px;  padding: 20px; padding-top:100px; border-radius: 50%;" src="images/books1.jpg"  /></span>
+					</div>
+					<a href="#one" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- One -->
+
+			<!-- Fivea -->
+			<section id="fivez" class="wrapper style2 special fade" style="background-color: blanchedalmond;">
+				<div class="container"  > <div id="API1A"></div>
+					<header >
+						<h2 style="color: #570000" >A brief explanation of APIs...</h2>
+						<p style="color: #570000" >An API can be described as a middleman. <br>
+							If you request information in the correct way,
+							he will send the information requested back to your computer,
+							and you will be all the wiser.
+							You might ask, why does he not show
+							you how to get the information yourself?
+							Each connection he has his hands on is complicated
+							and would take you much more time to learn
+							thank just to ask the middleman. Plus, the connection
+							might not want to open up its secret crafts.</p>
+						<h2 style="color: #570000"><br><br>You might be wondering what covert means are required to contact such a powerful middleman... </h4>
+						</h2><p style="color: #570000">
+							Luckily, this is not as complicated as it can be in real life.
+							All you need need to do is learn about the site's API.
+							You can even use this tutorial about the GoodReads API to
+							gain a better grasp of APIs in general and how to interact with them.   </p>
+						<p style="color: #570000"> Should the enigma of APIs spiked your curiosity, you can either click
+							<a href="https://schoolofdata.org/2013/11/18/web-apis-for-non-programmers/">here</a>
+							or continue reading on. </p>
+					</header>
+				</div>
+				<a href="#two" class="goto-next scrolly">Next</a>
+			</section>
+
+
+			<!-- Two -->
+				<section id="two" class="spotlight style2 right">
+					<span class="image fit main"><img src="images/GR_API2.jpg" alt="" /></span>
+
+					<div class="content">
+						<header>
+							<h2>The GoodReads API...</h2>
+							<p>is organized by methods. </p>
+						</header>
+						<p>This can be recognized by noting that the API  page is
+							organized by the names of the functions. Each method
+							contains a slight description of what  task it completes,
+							its HTTP Method (GET, POST) and any parameters 
+							that the method requires. </p>
+						<ul class="actions">
+							 <!-- <li><a href="#" class="button">Learn More</a></li> -->
+							<span class="image"><img src="images/GoodReadsAPI1.jpg" alt="" /></span>
+						</ul>
+					</div>
+					<a href="#three" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- Three -->
+				<section id="three" class="spotlight style3 left">
+					<span class="image fit main bottom"><img src="images/Key.jpg" alt="" /></span>
+					<div class="content" style="overflow: scroll;"><div id="APIKeys"></div>
+						<header>
+							<h2>API Keys</h2>
+							<p>An API key is a
+								secret token which is submitted alongside
+								a request to an API in order to
+								identify where the request came from. </p>
+						</header>
+						<p >
+							Sometimes the organizations that owns the API wants to identify the source of a request
+							to their API in order to control access.
+							For example, they can restrict access to certain API actions
+							based on who's performing the request. For companies which make
+							money from selling such services, it's also a way of tracking who's
+							using their API and how often for billing purposes. Furthermore, by blocking a key, they
+							can prevent users from making too many web service calls to their API
+							and therefore overwhelming their server. </p>
+						<ul class="actions">
+							<li><a href="https://www.quora.com/What-is-an-API-key-and-why-is-it-so-important" class="button">Learn More</a></li>
+						</ul>
+					</div>
+					<a href="#four" class="goto-next scrolly">Next</a>
+				</section>
+			<!-- Two -->
+			<section id="twoa" class="spotlight style2 right">
+				<span class="image fit main"><img src="images/MyKey.jpg" alt="" /></span>
+
+				<div class="content" style="overflow: scroll;">
+					<header>
+						<h2>The GoodReads API Key...</h2>
+					</header>
+					<p>In order to get your very own GoodReads API key, you will
+						first need to create an account on GoodReads. <br>
+					Then, you will need to go to the GoodReads API and click on
+						<a href="https://www.goodreads.com/api/keys">register your app.</a>
+						After this, you will need to provide the Application name,
+						Company name, Application URL(the url that will be accessing the Goodreads API),
+						Callback URL(the url that contains the callback to a GoodReads API function), and Support URL(the URL that
+						contain functions that help either the application URL or the callback URL complete their tasks).
+						Then you need to read through the terms of service.
+						Finally, you can click Create Key and you will be directed to a page containing your API Key.
+					</p>
+				</div>
+				<a href="#three" class="goto-next scrolly">Next</a>
+			</section>
+
+			<!-- Foura -->
+
+			<section id="foura" class="wrapper style1 special fade-up">
+				<div class="container" style="background-color: #417fb9; border-radius: 25px">
+					<header class="major"> <div id="APIMethods"></div>
+						<h2>GoodReads API Methods</h2>
+						<p>Here we will quickly take a look at three GoodReads API methods, <br>
+							which we will place onto our own website in the upcoming section . </p>
+					</header>
+					<div class="box alt">
+						<div class="row uniform">
+							<section class="4u 6u(medium) 12u$(xsmall)">
+								<span class="icon alt major fa-area-chart"></span>
+								<h3>reviews.list()</h3>
+								<p>This function lists the books a user has on their shelf.
+								It calls the Goodreads server and then requests the user's shelf
+									information. It then puts the designated user's shelf information
+									and returns it to the calling site. Its parameters require
+								an API key, the user's id whose shelf is requested, and the number
+								of shelves that should be returned. In this tutorial you will recieve an in-depth
+								look at how all of this takes place. </p>
+							</section>
+							<section class="4u 6u$(medium) 12u$(xsmall)">
+								<span class="icon alt major fa-flask"></span>
+								<h3>review.show()</h3>
+								<p>This function finds a review on the GoodReads website. You can then
+									link the review to your website and allow others to see the content.
+									The benefit of using this function is that if the GoodReads user
+									realizes they have made a grammar mistake or could be more articulate
+									in phrasing their thoughts, the newest version will appear on your website
+									whenever the function is called.
+								It takes as parameters the review's id and an API Key. </p>
+							</section>
+							<section class="4u$ 6u(medium) 12u$(xsmall)">
+								<span class="icon alt major fa-comment"></span>
+								<h3>Find.Group()</h3>
+								<p>This function searches both group names and their descriptions
+								for a word or phrase the user wants to find. This function will take
+								a string, which will hold the words the user wants to search, alongside the
+								number of pages of results that should be returned and our API Key. </p>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+
+
+			<!-- Fivea -->
+			<section id="fivea" class="wrapper style2 special fade">
+				<div class="container"> <div id="XMLToJSON"></div>
+					<header>
+						<h2>Converting XML to JSON</h2>
+						<p>GoodReads uses an antiquated form of packaging its information, namely XML.
+						In order to get information from GoodReads, we therefore need to convert it to JSON.
+							William Sumners created a function that does this and it is found below. I have added a few
+						comments, but the work is his and can be found
+							<a href=(https://github.com/metatribal/xmlToJSON"
+							   style="text-decoration-color: white; color: white;">here.</a></p>
+						<iframe width="100%" height="300" src="//jsfiddle.net/seiboldt_osu/xrdpsc4g/2/embedded/"
+								allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+					</header>
+				</div>
+			</section>
+
+			<!-- Fivea -->
+			<section id="fivegg" class="wrapper style2 special fade" style="background-color: #c88e2b; ">
+				<div class="container"><div id="GetAndPost"></div>
+					<header >
+						<h2>An Overview of Get and Post Requests</h2>
+						<p>On GoodReads, we have the opportunity to create both post and get requests. A Get request
+							is one where we ask the GoodReads server for information. In order to get exactly the information
+							we are searching for, we need to send certain parameters as defined for that particular
+							Get method.
+							The Post request is very similar to the Get request, except that we put information on the
+							GoodReads server. In GoodReads we need to use OAUTH, which is a third-party tool that allows
+							users to log in. OAUTH is used so that people are associated with a user account
+							when they post and therefore are less likely to post harassment or can be stopped more
+							easily if they do. It is fully documented by GoodReads, so please read up upon it
+							<a href="https://www.goodreads.com/api/documentation#oauth" style="text-decoration-color:
+							white; color: white;">here. </a>
+
+						</p>
+					</header>
+				</div>
+			</section>
+
+			<!-- Fivea -->
+			<section id="fiveb" class="wrapper style2 special fade" style="background-color: darkblue; ">
+				<div class="container"> <div id="HTMLCSS"></div>
+					<header >
+						<h2>Setting Up the HTML and CSS for Input and Output</h2>
+						<p>Setting up the HTML and CSS for input and output can be quite simple if you
+						already know and understand HTML and CSS. However, in order to be
+						certain the rest of this tutorial is very clear, I will quickly go over the input
+							and output elements.
+						<br>The element of interest is the User's ID. This section is nested in an input element.
+						The id is what we will use to declare which input element we want to call
+						data from. Also, note that for testing it is often important to not have to refill
+						in different text boxes, because that becomes tedious and can take up a lot of time
+						if you need to rerun the tests multiple times before they succeed. Therefore,
+						I have provided a preordained value to the input field.
+						<br>The next element of interest is the div that contains the id and class where we
+						want to output information. These fields do not require an output wrapper, as might
+						be expected, but can simply work as divs. By delaring the div's id, the return function will
+						be able to call up that div and output the information in its declared textfield. </p>
+						<iframe width="100%" height="300" src="//jsfiddle.net/seiboldt_osu/hm4xeqdo/embedded/html,css,result/"
+								allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+					</header>
+
+				</div>
+			</section>
+
+
+			<!-- Two-->
+			<section id="twob" class="spotlight style2 right">
+				<span class="image fit main"><img src="images/Post.jpg" alt="" /></span>
+
+				<div class="content"> <div id="CommunicatingWithServer"></div>
+					<header>
+						<h2>Setting Up The Communication With The GoodReads Server</h2>
+					</header>
+					<p>Javascript and JSON will be taking on the role of Postman and Postal Service in the process of
+						 doing the magic behind the submit. Javascript will be taking the information
+						that the user provides, as well as some internal information, and then creating a JSON object.
+						Javascript will then send this JSON object to the URL and requesting a response. After this, it will
+						parse the response and send it back to the website. We will be going through each of these steps
+						and seeing exactly how this is done. </p>
+					<ul class="actions">
+					</ul>
+				</div>
+				<a href="#three" class="goto-next scrolly">Next</a>
+			</section>
+
+			<!-- Fivea -->
+			<section id="fivec" class="wrapper style2 special fade" style="background-color: darkred; ">
+				<div class="container" > <div id="Listener"></div>
+					<header>
+						<h2>Setting up the Listener</h2>
+						<p>In Javascript, a listener is a function that waits for an event. For example, it might
+						wait for the Enter key to be pressed, or it might wait for a button to be pressed. In our effort
+						to listen to when the user clicks the submit button, we need to add a listener to know when the DOM
+						content is loaded. According to our CS 290 class, the "DOM is the model that a browser uses to
+							render a web page. So the first step to rendering a page is to parse the HTML document and
+							create the DOM from it. From there the browser will render the page by rendering each node of the DOM."
+							<br>
+							The second listener we need to add is one that listens for the click of the submit button.
+							Both of these listeners functions are presented below.
+						</p>
+						<iframe width="100%" height="300" src="//jsfiddle.net/seiboldt_osu/eted523m/embedded/"
+								allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+					</header>
+				</div>
+			</section>
+
+
+			<!-- Fivea -->
+			<section id="fived" class="wrapper style2 special fade" style="background-color: purple; ">
+				<div class="container" ><div id="Variables"></div>
+					<header>
+						<h2>Setting up the Variables</h2>
+						<p>The variables that we need to create are the same as the parameters of the GoodReads function we
+							are trying to call. The GoodReads function we are looking at initially is the Review.list() function,
+							which requires the developer key (GoodReads synonym for API key) and the GoodReads ID for the user.
+							There is other information that can be added, such as the ordering of the results or the results per page,
+							but these are optional and can easily be added in the future in the same way we add the API key and GoodReads
+							ID. Once we have our variables together, we concatenate them in the order that they are requested by the site,
+							which in this case was the url provided for the function, the user id, and the API key.
+						</p>
+						<iframe width="100%" height="300" src="//jsfiddle.net/seiboldt_osu/eted523m/6/embedded/js/"
+								allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+					</header>
+				</div>
+			</section>
+
+			<!-- Fivea -->
+			<section id="fivee" class="wrapper style2 special fade" style="background-color: mediumblue;">
+				<div class="container" ><div id="Request"></div>
+					<header>
+						<h2>The Request...</h2>
+						<p>In order to make the request, we need to send open to our Request variable and provide three
+							pieces of information. The first is if we want to get or post information. In this example, we
+							want to get information, so we write "GET". Then it requires to concatenated url that we created
+							in our variables section. The final parameter is a boolean that says whether this is a syncronous
+							or an asynchronous request. A synchronous request blocks everything until the request returns.
+							An asynchronous request does not do this, so it allows other javascript actions to take place, but
+							it does require an event handler to notice the response came in. Then we need to add a listener for
+							when the request returns and says its information is loaded. We will go over this in the next section.
+							After this, the request can be sent, through calling the Request.send() function. Finally, we add the
+							function preventDefault() because if you do not, the browser can refresh and lose all of the information.
+
+						</p>
+						<iframe width="100%" height="300" src="//jsfiddle.net/seiboldt_osu/eted523m/8/embedded/js/"
+								allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+					</header>
+				</div>
+			</section>
+
+			<!-- Fivea -->
+			<section id="fivef" class="wrapper style2 special fade" style="background-color: #168535; ">
+				<div class="container"><div id="Response"></div>
+					<header >
+						<h2>The Response...</h2>
+						<p>In order to read the response we need to create a listener that awaits a response from the
+							GoodReads server. This response will provide us with a status that declares whether the response
+							went well (numbers between 200 and less than 400), or it went awry (any other number). If we
+							find the status to be between 200 and 400, we can parse the response and put it into a variable.
+							Since GoodReads sends back XML data, we need to use the XML to JSON function that we mentioned above
+							to make the response into a JSON object. This JSON object is then stored in the Response variable
+							where we will send it's information onwards in the next section.
+						</p>
+						<iframe width="100%" height="300" src="//jsfiddle.net/seiboldt_osu/eted523m/9/embedded/js/"
+								allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+					</header>
+				</div>
+			</section>
+
+			<!-- Fivea -->
+			<section id="fiveg" class="wrapper style2 special fade" style="background-color: #4d4685; ">
+				<div class="container"><div id="Visibility"></div>
+					<header >
+						<h2>Making the Response Visible for the Site Viewer</h2>
+						<p>In the last section we received a json object and put it in the variable Response. In order
+							to make this object provide the viewer with the information they requested, we need to call
+							its parts and put them into our HTML elements. To do this, we look at the response and see where
+							information is that we are searching for. The information was returned in a series of arrays, so we
+							found the objects that we wanted in those arrays and called their properties. We then got the element
+							by id from our html and set its text to the information we found in the Response object.
+
+						</p>
+						<iframe width="100%" height="300" src="//jsfiddle.net/seiboldt_osu/eted523m/10/embedded/js,html/"
+								allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+					</header>
+				</div>
+			</section>
+
+			<!-- Fivea -->
+			<section id="fiveh" class="wrapper style2 special fade" style="background-color: #851c16; ">
+				<div class="container"><div id="FinalProduct"></div>
+					<header >
+						<h2>The Final Product.....</h2>
+						<p>Enjoy!
+						</p>
+						<iframe width="100%" height="300" src="//jsfiddle.net/seiboldt_osu/eted523m/12/embedded/js,html,css/"
+								allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+					</header>
+				</div>
+			</section>
+
+			<!-- Fivea -->
+			<section id="fiveI" class="wrapper style2 special fade" style="background-color: #19aed4; ">
+				<div class="container">
+
+						<!-- Specifies where the styling will come from.  -->
+						<link rel="stylesheet" type="text/css" href="MyStyle.css" />
+
+				<div style="text-align: justify;">
+					<h1 style="text-align: center; font-size: 250%">
+						A GoodReads User's Shelf:
+					</h1>
+					<form class="OuterColumn">
+						<label class="Labels">User's ID:</label>
+						<div class="TextFields">
+							<input class="TextFields" type="text" id="UserID" value="67589234"/>
+						</div>
+
+						<div class="InnerColumn">
+							<div class="OuterButton">
+								<button class="InnerButton" type="submit" id="GetMembersShelfSubmit">
+									Submit
+								</button>
+							</div>
+						</div>
+
+
+
+						<br>
+						<div class="InnerColumn">
+							<label class="Labels">First Book on List:</label>
+							<div class="TextFields">
+								<div id="FirstBook" class="TextFields"></div>
+							</div>
+						</div>
+						<div class="InnerColumn">
+							<label class="Labels">First Book Author:</label>
+							<div class="TextFields">
+								<div id="FirstAuthor" class="TextFields"></div>
+							</div>
+						</div>
+						<div class="InnerColumn">
+							<label class="Labels">First Book Description:</label>
+							<div class="TextFields">
+								<div id="FirstDec" class="TextFields"></div>
+							</div>
+						</div>
+
+						<br>
+						<div class="InnerColumn">
+							<label class="Labels">Second Book on List:</label>
+							<div class="TextFields">
+								<div id="SecondBook" class="TextFields"></div>
+							</div>
+						</div>
+						<div class="InnerColumn">
+							<label class="Labels">Second Book Author:</label>
+							<div class="TextFields">
+								<div id="SecondAuthor" class="TextFields"></div>
+							</div>
+						</div>
+						<div class="InnerColumn">
+							<label class="Labels">Second Book Description:</label>
+							<div class="TextFields">
+								<div id="SecondDec" class="TextFields"></div>
+							</div>
+						</div>
+
+					</form>
+					<script src="GetUserShelf.js"></script>
+
+					</div>
+
+				</div>
+			</section>
+
+			<!-- Fivea -->
+			<section id="fivege" class="wrapper style2 special fade" style="background-color: #225de2; ">
+				<div class="container"><div id="LinkingContent"></div>
+					<header >
+						<h2>Link Your Site to a Review Made on GoodReads</h2>
+						<p>Sometimes, you read a review that captures a book and the experience
+							of reading it more than you could possibly put into your own words.
+							Should you happen upon such a review and want to embed it into your own
+							website, you could use the GetReview function that GoodReads offers. This
+							pulls upon the same concepts as those detailed above. Every line which 
+							either builds up the communication or directly calls the
+							GoodReads server in this code is commented, so should you still be 
+							unclear about linking GoodReads to your own website,  please 
+							read through the comments or reread the fully explained versions of 
+							the topics outlined by the comments above. <br/>
+							<br/><iframe width="100%" height="300" src="//jsfiddle.net/5afzkv8r/1/embedded/js,html,css/"
+										 allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+						</p>
+					</header>
+				</div>
+			</section>
+
+
+			<section id="fivegf" class="wrapper style2 special fade" style="background-color: #851c16; ">
+				<div class="container"><div id="AttachReviewToYourSitePage"></div>
+					<header >
+
+							<h1 style="color : white">Here is my attempt at linking an awesome review I found on GoodReads
+							to this site using the html, css and javascript from above... </h1>
+
+						<form class="OuterColumn">
+							<label class="Labels">To see Chris's Review of <u>Atlas Shrugged</u>:</label>
+							<div class="TextFields">
+								<input class="TextFields" type="hidden" id="ReviewID" value="866"/>
+							</div>
+							<div class="InnerColumn">
+								<div class="OuterButton">
+									<button class="InnerButton" type="button" id="SeeReview">
+										Please click here...
+									</button>
+								</div>
+							</div>
+							<br>
+							<div class="InnerColumn">
+								<div class="TextFields">
+									<div id="Review" class="TextFields"></div>
+								</div>
+							</div>
+
+						</form>
+					</header>
+				</div>
+			</section>
+
+			<!-- Two-->
+			<section id="twoc" class="spotlight style2 right">
+				<span class="image fit main"><img src="images/YourTurn3.jpg" alt="" /></span>
+
+				<div class="content"> <div id="YourTurn"></div>
+					<header>
+						<h2>Your turn!</h2>
+					</header>
+					<p>Now it is your turn to try using HTML, CSS, Javascript and JSON to communicate with the
+					GoodReads server and GET or POST information on to a website. Try using the Group.Search() function
+					to find a group with a given search string. <a href="https://jsfiddle.net"
+																   style="text-decoration-color: white; color: white;">JSFiddle.</a>is a super useful tool for writing and testing
+					the combination of Javascript, HTML, and CSS and seeing if it provides the intended result.
+					<br>If you need any help, go ahead and look through the earlier pages to remind yourself of the intricacies
+					of communicating with the GoodReads server.
+					</p>
+					<ul class="actions">
+					</ul>
+				</div>
+				<a href="#three" class="goto-next scrolly">Next</a>
+			</section>
+			<!-- Four -->
+				<section id="four" class="wrapper style1 special fade-up">
+					<div class="container" style="background-color: #417fb9; border-radius: 25px">
+						<header class="major">
+							<h2>Were you successful?</h2>
+							<p>There are hints below to help you out. Once you believe you have figured out the solution, go ahead
+							and click on the text below to see the answer to the various pieces of code. </p>
+						</header>
+						<div class="box alt">
+							<div class="row uniform">
+								<section class="4u 6u(medium) 12u$(xsmall)">
+									<a href="https://jsfiddle.net/seiboldt_osu/cjwvuopw/">
+									<span class="icon alt major fa-area-chart"></span>
+									<h3>HTML</h3>
+									<p style="color: white">The HTML will require a field for the query string input alongside a section
+										of divs where the information that is returned can be displayed. </p></a>
+								</section>
+								<section class="4u 6u$(medium) 12u$(xsmall)">
+									<a href="https://jsfiddle.net/seiboldt_osu/71zhax8x/">
+									<span class="icon alt major fa-comment"></span>
+									<h3>CSS</h3>
+									<p style="color: white">
+										The CSS can be exactly the same, or you can make it fancy! </p></a>
+								</section>
+								<section class="4u$ 6u(medium) 12u$(xsmall)">
+									<a href="https://jsfiddle.net/seiboldt_osu/1md4Lzek/2/">
+									<span class="icon alt major fa-flask"></span>
+									<h3>Javascript</h3>
+									<p style="color: white">This javascript is very similar to the one we built above. Give it a serious shot
+										and look back at the description of the various sections if you need reminders.
+									If you cannot figure it out, or if you figured it out but want to double check your answer,
+									click here.</p></a>
+								</section>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Fivea -->
+			<section id="fivey" class="wrapper style2 special fade" style="background-color: #cdbc76;">
+				<div class="container" >
+
+
+						<h2>The final result of find.group()</h2>
+
+						<h1>
+							Type in a search word:
+						</h1>
+						<form class="OuterColumn" style="color: maroon;">
+							<div class="TextFields" >
+								<input class="TextFields" type="text" id="QueryString" value="Fantasy" style="border: 2px solid maroon; border-radius: 4px;   margin:0 auto; width: 50%"/>
+							</div>
+
+							<div class="InnerColumn">
+								<div class="OuterButton">
+									<button class="InnerButton" type="submit" id="SubmitGroupQuery" >
+										Submit
+									</button>
+								</div>
+							</div>
+
+
+
+							<br>
+							<div class="InnerColumn">
+								<label class="Labels">Group Name:</label>
+								<div class="TextFields">
+									<div id="FirstGroupTitle" class="TextFields"></div>
+								</div>
+							</div>
+							<div class="InnerColumn">
+								<label class="Labels">Group User Count:</label>
+								<div class="TextFields">
+									<div id="FirstGroupCount" class="TextFields"></div>
+								</div>
+							</div>
+							<div class="divOutside"></div>
+							<br>
+							<div class="InnerColumn">
+								<label class="Labels">Group Name:</label>
+								<div class="TextFields">
+									<div id="SecondGroupTitle" class="TextFields"></div>
+								</div>
+							</div>
+							<div class="InnerColumn">
+								<label class="Labels">Group User Count:</label>
+								<div class="TextFields">
+									<div id="SecondGroupCount" class="TextFields"></div>
+								</div>
+							</div>
+							<div class="divOutside"></div>
+							<br>
+							<div class="InnerColumn">
+								<label class="Labels">Group Name:</label>
+								<div class="TextFields">
+									<div id="ThirdGroupTitle" class="TextFields"></div>
+								</div>
+							</div>
+							<div class="InnerColumn">
+								<label class="Labels">Group User Count:</label>
+								<div class="TextFields">
+									<div id="ThirdGroupCount" class="TextFields"></div>
+								</div>
+							</div>
+							<div class="divOutside"></div>
+							<br>
+							<div class="InnerColumn">
+								<label class="Labels">Group Name:</label>
+								<div class="TextFields">
+									<div id="FourthGroupTitle" class="TextFields"></div>
+								</div>
+							</div>
+							<div class="InnerColumn">
+								<label class="Labels">Group User Count:</label>
+								<div class="TextFields">
+									<div id="FourthGroupCount" class="TextFields"></div>
+								</div>
+							</div>
+							<div class="divOutside"></div>
+							<br>
+							<div class="InnerColumn">
+								<label class="Labels">Group Name:</label>
+								<div class="TextFields">
+									<div id="FifthGroupTitle" class="TextFields"></div>
+								</div>
+							</div>
+							<div class="InnerColumn">
+								<label class="Labels">Group User Count:</label>
+								<div class="TextFields">
+									<div id="FifthGroupCount" class="TextFields"></div>
+								</div>
+							</div>
+						</form>
+						<script src="FindGroup.js"></script>
+
+				</div>
+			</section>
+
+			<!-- Five -->
+				<section id="five" class="wrapper style2 special fade" style="background-color: #650000">
+					<div class="container" style="background-color: #417fb9; border-radius: 25px">
+						<header>
+							<h2>Hopefully you learned an ample amount about the GoodReads API <br>and will be comfortable incorporating
+							it into your websites.</h2>
+							<p>Good Luck! </p>
+						</header>
+					</div>
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="copyright">
+						<li>Copyright &copy; Tia Seibold. 2017. <br> seibold@oregonstate.edu</li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<script src="GetReview.js"></script>
+
+
+	</body>
+</html>

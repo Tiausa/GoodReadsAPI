@@ -1,0 +1,43 @@
+
+<!-- Defines this document as an html document-->
+<!DOCTYPE html>
+
+<!-- Says that this document's language is english-->
+<html lang="en">
+
+<head>
+
+
+    <!-- This is the name that appears on the tab-->
+    <title>Find A Group</title>
+
+    <!-- Specifies the character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Specifies where the styling will come from.  -->
+    <link rel="stylesheet" type="text/css" href="MyStyle.css" />
+</head>
+<body>
+<h1>
+    Find A Group
+</h1>
+<form class="OuterColumn">
+    <label class="Labels">ID of the Group:</label>
+    <div class="TextFields">
+        <input class="TextFields" type="text" id="IDOfGroup" value="88432"/>
+    </div>
+
+    <a href="https://goodreads.com/oauth/authorize?oauth_callback=lvh.me">
+        First Click Here to Connect Your Account</a>
+    <div class="InnerColumn">
+        <div class="OuterButton">
+            <button class="InnerButton" type="submit" id="GetMembersShelfSubmit">
+                Submit
+            </button>
+        </div>
+    </div>
+</form>
+<script src="JoinAGroupPost.js"></script>
+
+</body>
+</html>
